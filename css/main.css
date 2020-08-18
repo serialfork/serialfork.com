@@ -1,0 +1,214 @@
+/*
+ * TOKENS
+ */
+
+:root {
+  --c-brand: #ffd877;
+  --c-secondary: #fb67bd;
+  --c-dark: #390055;
+}
+
+/*
+ * RESET
+ */
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default padding */
+ul[class],
+ol[class] {
+  padding: 0;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* Remove list styles on ul, ol elements with a class attribute */
+ul[class],
+ol[class] {
+  list-style: none;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Natural flow and rhythm in articles by default */
+article > * + * {
+  margin-top: 1em;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations and transitions for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/*
+ * GENERAL
+ */
+
+body {
+  font-family: Recursive, monospace;
+}
+
+/*
+ * LAYOUT
+ */
+
+.d-grid {
+  display: grid;
+}
+
+.center {
+  place-items: center;
+}
+
+.drag-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.drag {
+  cursor: pointer;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+/*
+ * GEOMETERY
+ */
+
+.h-100p {
+  height: 100px;
+}
+
+.w-100p {
+  width: 100px;
+}
+
+.h-100v {
+  height: 100vh;
+}
+
+.w-100v {
+  width: 100vw;
+}
+
+/*
+ * SPACING
+ */
+
+.p-lg {
+  padding: 64px;
+}
+
+/*
+ * SPACING
+ */
+
+/*
+ * COLORS
+ */
+
+.txt-brand {
+  color: var(--c-brand);
+}
+
+.bg-dark {
+  background: var(--c-dark);
+}
+
+.bg-brand {
+  background: var(--c-brand);
+}
+
+.bg-textured {
+  background: url("../assets/imgs/background.png");
+  background-size: cover;
+}
+
+/*
+ * STICKERS
+ */
+
+#sticker-title {
+  color: var(--c-brand);
+  text-decoration: none;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#sticker-title h1 {
+  font-size: 5rem;
+  text-shadow: 10px 0px 0px #fff, -10px 0px 0 #fff, 0 10px #fff, 0 -10px #fff,
+    10px 10px #fff, -10px -10px #fff, 5px 0 0 #fff, 0 -5px 0 #fff,
+    5px 5px 0 #fff, -5px -5px 0 #fff, 5px 5px 15px #000, -5px -5px 15px #000;
+  /* text-shadow: 3px 3px 0 #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, */
+  /*   -1px 1px 0 #fff, 1px 1px 0 #fff, 0 0 10px var(--c-dark);      */
+}
+
+#sticker-logo {
+  height: 200px;
+  width: 200px;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#sticker-interro {
+  height: 200px;
+  width: 200px;
+  top: 20%;
+  left: 10%;
+  transform: translate(-50%, -50%) rotateZ(-10deg);
+}
