@@ -25,9 +25,17 @@ const dragOver = (event) => {
 };
 
 document.addEventListener("DOMContentLoaded", () => {
-  const draggables = Array.from(document.querySelectorAll(".drag"));
+  const dragContainers = Array.from(
+    document.querySelectorAll(".drag-container")
+  );
+  const draggables = Array.from(
+    document.querySelectorAll(".drag-container [draggable]")
+  );
+  dragContainers.forEach((container) => {
+    container.addEventListener("drop", drop);
+    container.addEventListener("dragover", dragOver);
+  });
   draggables.forEach((draggable) => {
-    console.log(draggable);
-    draggable.addEventListener("dragstart", dragStart);
+    draggable.addEventListener("dragstart", dragStart, false);
   });
 });

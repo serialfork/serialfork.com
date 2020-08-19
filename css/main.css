@@ -5,7 +5,7 @@
 :root {
   --c-brand: #ffd877;
   --c-secondary: #fb67bd;
-  --c-dark: #390055;
+  --c-dark: #060b17;
 }
 
 /*
@@ -99,12 +99,62 @@ body {
   font-family: Recursive, monospace;
 }
 
+a {
+  color: var(--c-brand);
+  text-decoration: none;
+}
+
+/*
+ * TYPE
+ */
+
+.fs-xl {
+  font-size: 48px;
+}
+
+.fs-lg {
+  font-size: 32px;
+}
+
+.fs-md {
+  font-size: 24px;
+}
+
+.fs-sm {
+  font-size: 18px;
+}
+
+.fs-xs {
+  font-size: 14px;
+}
+
 /*
  * LAYOUT
  */
 
 .d-grid {
   display: grid;
+}
+
+.d-auto-grid {
+  --min-size: 16rem;
+  --gap-size: 1rem;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(var(--min-size), 1fr));
+  grid-gap: var(--gap-size);
+}
+
+.d-flex {
+  display: flex;
+}
+
+.ai-center {
+  align-items: center;
+}
+
+.jc-center {
+  justify-content: center;
 }
 
 .center {
@@ -116,8 +166,8 @@ body {
   overflow: hidden;
 }
 
-.drag {
-  cursor: pointer;
+.drag-container [draggable] {
+  cursor: move;
   position: absolute;
   left: 0;
   top: 0;
@@ -143,6 +193,22 @@ body {
   width: 100vw;
 }
 
+.h-100 {
+  height: 100%;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.h-50 {
+  height: 50%;
+}
+
+.w-50 {
+  width: 50%;
+}
+
 /*
  * SPACING
  */
@@ -154,6 +220,18 @@ body {
 /*
  * SPACING
  */
+
+.m-sm {
+  margin: 8px;
+}
+
+.mr-xl {
+  margin: 64px;
+}
+
+.mr-sm {
+  margin: 8px;
+}
 
 /*
  * COLORS
@@ -171,8 +249,13 @@ body {
   background: var(--c-brand);
 }
 
-.bg-textured {
-  background: url("../assets/imgs/background.png");
+.bg-grad {
+  background: rgb(191, 125, 238);
+  background: radial-gradient(
+    circle,
+    rgba(191, 125, 238, 1) 0%,
+    rgba(192, 131, 232, 1) 100%
+  );
   background-size: cover;
 }
 
@@ -213,10 +296,39 @@ body {
   transform: translate(-50%, -50%) rotateZ(-10deg);
 }
 
-#sticker-eye {
-  height: 200px;
-  width: 200px;
-  top: 20%;
-  left: 10%;
-  transform: translate(-50%, -50%) rotateZ(-10deg);
+.main-nav {
+  position: fixed;
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+}
+
+/*
+ * ASPECT RATIO
+ */
+
+[style*="--aspect-ratio"] > :first-child {
+  width: 100%;
+}
+[style*="--aspect-ratio"] > img {
+  height: auto;
+}
+@supports (--custom: property) {
+  [style*="--aspect-ratio"] {
+    position: relative;
+  }
+  [style*="--aspect-ratio"]::before {
+    content: "";
+    display: block;
+    padding-bottom: calc(100% / (var(--aspect-ratio)));
+  }
+  [style*="--aspect-ratio"] > :first-child {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+  }
 }

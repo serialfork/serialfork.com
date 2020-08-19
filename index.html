@@ -1,16 +1,47 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link href="https://fonts.googleapis.com/css2?family=Recursive:wght@500..800&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Recursive:wght@500..800&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="css/main.css" />
-      <script src="js/stickers.js"></script>
+    <script src="js/stickers.js"></script>
   </head>
-  <body>
-    <header class="bg-textured p-lg txt-brand h-100v w-100v drag-container" ondragover="dragOver(event)" ondrop="drop(event)">
-      <a href="/" class="drag" id="sticker-title"><h1>serialfork</h1></a>
-      <img src="assets/imgs/logo.svg" class="drag" id="sticker-logo" />
-      <img src="assets/imgs/interrosticker.svg" class="drag" id="sticker-interro" />
-      <div class="drag" id="sticker-eye"><div class="eye" /></div>
+  <body class="fs-sm">
+    <nav
+      class="d-flex ai-center jc-center txt-brand bg-dark fs-md h-100p main-nav"
+    >
+      <a href="/" class="mr-sm">Home</a>
+      <a href="/about" class="mr-sm">About</a>
+      <a href="/find" class="mr-sm">Find us</a>
+    </nav>
+    <header
+      class="bg-grad p-lg txt-brand h-100v w-100v drag-container"
+      ondragover="dragOver(event)"
+      ondrop="drop(event)"
+    >
+      <a href="/" draggable id="sticker-title"><h1>serialfork</h1></a>
+      <img src="assets/imgs/logo.svg" draggable id="sticker-logo" />
+      <img
+        src="assets/imgs/interrosticker.svg"
+        draggable
+        id="sticker-interro"
+      />
     </header>
+    <section class="h-100v w-100v d-flex ai-center jc-center">
+      <div class="mr-xl">
+        <h1 class="fs-xl">wtf is this?</h1>
+        <p>a hackerspace</p>
+      </div>
+      <figure class="h-50">
+        <div style="--aspect-ratio: 16/9;">
+          <img src="assets/imgs/3dprinter.jpg" />
+        </div>
+        <figcaption>
+          This is not our 3D printer, but we might have one like this someday!
+        </figcaption>
+      </figure>
+    </section>
   </body>
 </html>
