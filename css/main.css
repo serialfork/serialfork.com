@@ -212,3 +212,11 @@ body {
   left: 10%;
   transform: translate(-50%, -50%) rotateZ(-10deg);
 }
+
+#sticker-eye {
+  height: 200px;
+  width: 200px;
+  top: 20%;
+  left: 10%;
+  transform: translate(-50%, -50%) rotateZ(-10deg);
+}
